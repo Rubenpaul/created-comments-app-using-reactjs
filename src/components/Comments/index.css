@@ -1,0 +1,132 @@
+/* Write your CSS here */
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #dee0e3;
+  font-family: 'Roboto';
+  padding-left: 15%;
+  padding-right: 15%;
+}
+@media screen and (max-width: 650px) {
+  .bg-container {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+.comments-heading {
+  font-size: 38px;
+  color: #1e293b;
+  font-weight: bold;
+  width: 60%;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    flex-direction: column;
+  }
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  order: 1;
+}
+@media screen and (max-width: 650px) {
+  .image-container {
+    justify-content: flex-start;
+    order: 0;
+    padding-left: 0pxc;
+  }
+}
+.comments-image {
+  height: 290px;
+  width: 470px;
+  padding-left: 40%;
+  margin-right: 10%;
+  flex-shrink: 1;
+}
+@media screen and (max-width: 650px) {
+  .comments-image {
+    padding-left: 0px;
+    height: 230px;
+    width: 300px;
+  }
+}
+.technologies-and-input-comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 0;
+}
+.Technologies-heading {
+  font-size: 15px;
+  color: #475569;
+  font-weight: 500;
+}
+@media screen and (max-width: 650px) {
+  .Technologies-heading {
+    font-size: 20px;
+  }
+}
+
+.person-name-input {
+  color: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 5px;
+  height: 40px;
+  width: 340px;
+  outline: none;
+  padding-left: 10px;
+  margin-bottom: 13px;
+  font-size: 12px;
+}
+.person-comment-text-input {
+  color: #1e293b;
+  width: 340px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #475569;
+  border-radius: 5px;
+  outline: none;
+}
+.add-comment-btn {
+  height: 34px;
+  width: 150px;
+  background-color: #0284c7;
+  border-radius: 5px;
+  border: 0px;
+  color: #cbd2d9;
+  padding: 3px;
+  font-weight: 500;
+}
+
+.hr {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.comment-count-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.comment-count {
+  height: 25px;
+  width: 25px;
+  background-color: #0284c7;
+  color: #ffffff;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+.span {
+  font-size: 15px;
+  color: #475569;
+}

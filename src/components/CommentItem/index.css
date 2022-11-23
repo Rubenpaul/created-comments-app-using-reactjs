@@ -1,0 +1,144 @@
+.amber {
+  background-color: #f59e0b;
+}
+
+.blue {
+  background-color: #0b69ff;
+}
+
+.orange {
+  background-color: #f97316;
+}
+
+.emerald {
+  background-color: #10b981;
+}
+
+.teal {
+  background-color: #14b8a6;
+}
+
+.red {
+  background-color: #b91c1c;
+}
+
+.light-blue {
+  background-color: #0ea5e9;
+}
+
+/* Write your CSS here */
+.list-item {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-family: 'Roboto';
+}
+.person-comment-and-details {
+  display: flex;
+  flex-direction: row;
+}
+.profile-letter {
+  background-color: #b91c1c;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 650px) {
+  .profile-letter {
+    height: 40px;
+    width: 67px;
+    font-size: 13px;
+  }
+}
+.person-profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.person-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.person-name {
+  font-size: 20px;
+  margin-right: 20px;
+  color: #334155;
+  font-weight: 500;
+}
+@media screen and (max-width: 650px) {
+  .person-name {
+    font-size: 17px;
+  }
+}
+.comment-add-time {
+  color: #94a3b8;
+  font-size: 13px;
+}
+.person-comment {
+  color: #64748b;
+  font-size: 17px;
+  margin-top: 0px;
+}
+@media screen and (max-width: 650px) {
+  .person-comment {
+    font-size: 15px;
+  }
+}
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.like-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.like-icon {
+  height: 27px;
+  width: 29px;
+  margin-right: 20px;
+}
+@media screen and (max-width: 650px) {
+  .like-icon {
+    height: 23px;
+    width: 23px;
+  }
+}
+.like-text {
+  /* color: #0b69ff; */
+  color: #7e858e;
+  font-size: 17px;
+}
+@media screen and (max-width: 650px) {
+  .like-text {
+    font-size: 15px;
+  }
+}
+.delete-btn {
+  border: 0px;
+  background-color: transparent;
+}
+.delete-icon {
+  height: 22px;
+  width: 22px;
+}
+@media screen and (max-width: 650px) {
+  .delete-icon {
+    height: 20px;
+    width: 20px;
+  }
+}
+.line {
+  width: 100%;
+  margin-bottom: 8px;
+}
