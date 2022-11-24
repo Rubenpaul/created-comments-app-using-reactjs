@@ -114,7 +114,6 @@
   }
 }
 .like-text {
-  /* color: #0b69ff; */
   color: #7e858e;
   font-size: 17px;
 }
@@ -140,4 +139,13 @@
 .line {
   width: 100%;
   margin-bottom: 8px;
+}
+.like-button {
+  border: 0px;
+  background-color: transparent;
+  outline: none;
+}
+.like-update-color {
+  color: #0b69ff;
+  font-weight: bold;
 }

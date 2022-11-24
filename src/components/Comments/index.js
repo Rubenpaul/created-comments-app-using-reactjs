@@ -1,5 +1,4 @@
 import './index.css'
-import {formatDistanceToNow} from 'date-fns'
 import {v4 as uuidv4} from 'uuid'
 import {Component} from 'react'
 
@@ -18,7 +17,7 @@ const initialContainerBackgroundClassNames = [
 // Write your code here
 
 class Comments extends Component {
-  state = {commentsList: [], nameInput: '', commentInput: ''}
+  state = {commentsList: [], nameInput: '', commentInput: '', count: 0}
 
   onChangeNameInput = event => {
     this.setState({nameInput: event.target.value})
@@ -52,11 +51,32 @@ class Comments extends Component {
       commentsList: [...prevState.commentsList, newComment],
       nameInput: '',
       commentInput: '',
+      count: prevState.count + 1,
+    }))
+  }
+
+  deleteComment = id => {
+    this.setState(prevState => ({
+      commentsList: prevState.commentsList.filter(
+        eachComment => eachComment.id !== id,
+      ),
+      count: prevState.count - 1,
+    }))
+  }
+
+  updateStatus = id => {
+    this.setState(prevState => ({
+      commentsList: prevState.commentsList.map(eachComment => {
+        if (eachComment.id === id) {
+          return {...eachComment, isLiked: !eachComment.isLiked}
+        }
+        return eachComment
+      }),
     }))
   }
 
   render() {
-    const {commentsList, nameInput, commentInput} = this.state
+    const {commentsList, nameInput, commentInput, count} = this.state
 
     return (
       <div className="bg-container">
@@ -79,6 +99,7 @@ class Comments extends Component {
               className="person-name-input"
               placeholder="Your Name"
               onChange={this.onChangeNameInput}
+              value={nameInput}
             />
             <textarea
               type="text"
@@ -87,6 +108,7 @@ class Comments extends Component {
               rows="10"
               cols="50"
               onChange={this.onChangeComment}
+              value={commentInput}
             >
               {}
             </textarea>
@@ -101,19 +123,19 @@ class Comments extends Component {
         </div>
         <hr className="hr" />
         <div className="comment-count-container">
-          <span className="comment-count">0</span>
+          <span className="comment-count">{count}</span>
           <span className="span">Comments</span>
         </div>
 
         <ul className="un-order-list-container">
-          {commentsList.length !== 0
-            ? commentsList.map(eachComment => (
-                <CommentItem
-                  commentDetails={eachComment}
-                  key={eachComment.id}
-                />
-              ))
-            : []}
+          {commentsList.map(eachComment => (
+            <CommentItem
+              commentDetails={eachComment}
+              key={eachComment.id}
+              deleteComment={this.deleteComment}
+              updateStatus={this.updateStatus}
+            />
+          ))}
         </ul>
       </div>
     )
